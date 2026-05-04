@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jessica MANTISSA LEMBE – Ingénieure Réseaux & Systèmes (Light)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #FFFFFF;
+  --navy2: #F4F7FA;
+  --blue: #1a6fa8;
+  --blue-light: #1a6fa8;
+  --accent: #0088a8;
+  --white: #0d1b2a;
+  --gray: #5a6a7a;
+  --gray-light: #dde4ec;
+  --border: rgba(0,0,0,0.09);
+  --card-bg: rgba(0,0,0,0.03);
+  --font: 'Space Grotesk', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--navy); color: var(--white); line-height: 1.7; overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.09);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between; height: 60px;
+}
+.nav-logo { font-family: var(--mono); font-size: 14px; color: var(--accent); letter-spacing: 0.05em; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--gray); font-size: 13px; text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 80px 2rem 4rem;
+  position: relative; overflow: hidden;
+}
+.hero-grid {
+  position: absolute; inset: 0; opacity: 0.07;
+  background-image: linear-gradient(var(--gray) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--gray) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hero-content { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-tag { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
+.hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--accent); display: inline-block; }
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.15; margin-bottom: 1.25rem; }
+h1 span { color: var(--accent); }
+.hero-sub { font-size: 1.05rem; color: var(--gray); max-width: 560px; margin-bottom: 2.5rem; line-height: 1.8; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #ffffff; font-weight: 600;
+  padding: 0.7rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 14px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.2); color: var(--white); font-weight: 500;
+  padding: 0.7rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 14px;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.hero-stack { margin-top: 4rem; display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+.hero-stack-label { font-family: var(--mono); font-size: 11px; color: var(--gray); letter-spacing: 0.08em; }
+.tech-pill { font-family: var(--mono); font-size: 11px; padding: 4px 10px; border-radius: 20px; background: var(--card-bg); border: 1px solid var(--border); color: var(--gray); }
+
+/* ── SECTIONS ── */
+section { padding: 5rem 2rem; }
+.container { max-width: 900px; margin: 0 auto; }
+.section-tag { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 3rem; }
+h2 em { color: var(--accent); font-style: normal; }
+
+/* ── ABOUT ── */
+#about { background: var(--navy2); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.about-text p { color: var(--gray); margin-bottom: 1.2rem; font-size: 15px; }
+.about-text p strong { color: var(--white); }
+.about-cards { display: flex; flex-direction: column; gap: 1rem; }
+.about-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+}
+.about-card-label { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-bottom: 0.4rem; letter-spacing: 0.06em; }
+.about-card-val { font-size: 14px; color: var(--white); }
+
+/* ── EXPÉRIENCES ── */
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+.tl-item { position: relative; margin-bottom: 2.5rem; }
+.tl-dot {
+  position: absolute; left: -2.44rem; top: 5px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--navy);
+  box-shadow: 0 0 0 3px rgba(0,196,204,0.18);
+}
+.tl-dot.gray { background: var(--gray); box-shadow: 0 0 0 3px rgba(138,155,176,0.15); }
+.tl-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.tl-title { font-size: 16px; font-weight: 600; }
+.tl-date { font-family: var(--mono); font-size: 11px; color: var(--accent); padding: 3px 10px; background: rgba(0,196,204,0.1); border-radius: 20px; white-space: nowrap; }
+.tl-date.gray { color: var(--gray); background: rgba(138,155,176,0.1); }
+.tl-company { font-size: 13px; color: var(--blue-light); margin-bottom: 0.8rem; }
+.tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.tl-bullets li { font-size: 14px; color: var(--gray); padding-left: 1.1rem; position: relative; }
+.tl-bullets li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.tl-stack { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-family: var(--mono); font-size: 11px; padding: 3px 9px; border-radius: 4px; background: rgba(26,111,168,0.15); border: 1px solid rgba(26,111,168,0.3); color: #7ec8e3; }
+
+/* ── PROJETS ── */
+#projets { background: var(--navy2); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.project-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s;
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+.project-card:hover { border-color: rgba(0,196,204,0.4); transform: translateY(-3px); }
+.proj-icon { font-size: 22px; margin-bottom: 0.2rem; }
+.proj-title { font-size: 15px; font-weight: 600; }
+.proj-desc { font-size: 13px; color: var(--gray); line-height: 1.65; flex: 1; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
+.proj-link { margin-top: 0.5rem; font-family: var(--mono); font-size: 12px; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+.proj-link:hover { text-decoration: underline; }
+.proj-wip { font-family: var(--mono); font-size: 10px; color: var(--gray); padding: 2px 8px; background: rgba(138,155,176,0.1); border-radius: 20px; display: inline-block; }
+
+/* ── COMPÉTENCES ── */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.skill-group {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.25rem;
+}
+.skill-group-title { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 0.9rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag { font-size: 12px; padding: 4px 10px; border-radius: 4px; background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.09); color: var(--white); }
+
+/* ── CERTIFICATIONS ── */
+#certifications { background: var(--navy2); }
+.certif-list { display: flex; flex-direction: column; gap: 0.9rem; }
+.certif-item {
+  display: flex; align-items: center; gap: 1.25rem;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1rem 1.25rem;
+}
+.certif-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.certif-icon.azure { background: rgba(0,120,212,0.15); }
+.certif-icon.cisco { background: rgba(0,156,222,0.15); }
+.certif-icon.ll { background: rgba(0,115,186,0.15); }
+.certif-title { font-size: 14px; font-weight: 500; }
+.certif-sub { font-size: 12px; color: var(--gray); margin-top: 2px; }
+.certif-badge { margin-left: auto; font-family: var(--mono); font-size: 10px; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+.certif-badge.done { background: rgba(0,196,204,0.12); color: var(--accent); }
+.certif-badge.wip { background: rgba(138,155,176,0.1); color: var(--gray); }
+
+/* ── CONTACT ── */
+.contact-box {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 16px; padding: 3rem; text-align: center; max-width: 600px; margin: 0 auto;
+}
+.contact-box p { color: var(--gray); font-size: 15px; margin-bottom: 2rem; }
+.contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.contact-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 500;
+  border: 1px solid var(--border); color: var(--white); transition: border-color 0.2s;
+}
+.contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── FOOTER ── */
+footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--gray); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .about-grid { grid-template-columns: 1fr; }
+  nav { padding: 0 1rem; }
+  .nav-links { gap: 1rem; }
+  section { padding: 3.5rem 1.25rem; }
+  .hero-content { text-align: center; }
+  .hero-cta { justify-content: center; }
+  .hero-stack { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">sophie.martin ~/</span>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#experiences">Expériences</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Disponible en CDI · Île-de-France · Oct. 2026</div>
+    <h1>Sophie Martin<br/><span>Ingénieure Réseaux</span><br/>& Systèmes</h1>
+    <p class="hero-sub">
+      Spécialisée en infrastructure réseau, supervision et migration Cloud. 
+      Deux ans d'alternance en production multisite sur environnements 
+      Cisco, Azure et Nagios/Naemon.
+    </p>
+    <div class="hero-cta">
+      <a href="cv_JESSICA_MANTISSA.pdf" class="btn-primary" download>
+        ↓ Télécharger le CV
+      </a>
+      <a href="#contact" class="btn-outline">Me contacter →</a>
+    </div>
+    <div class="hero-stack">
+      <span class="hero-stack-label">STACK</span>
+      <span class="tech-pill">Cisco ASA/Meraki</span>
+      <span class="tech-pill">Microsoft Azure</span>
+      <span class="tech-pill">Nagios · Naemon</span>
+      <span class="tech-pill">Terraform · Ansible</span>
+      <span class="tech-pill">Docker</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-tag">// À propos</p>
+    <h2>Qui <em>suis-je</em> ?</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Ingénieure réseaux et systèmes, je termine un <strong>Master 2 Expert 
+          Informatique SI – spécialité Infrastructure (RNCP Niveau 7)</strong> 
+          en alternance depuis deux ans.
+        </p>
+        <p>
+          Mon quotidien : administrer des équipements <strong>Cisco et HP Aruba</strong>, 
+          piloter la refonte de la supervision réseau, participer à la migration 
+          de pare-feux Checkpoint vers <strong>Cisco ASA</strong>, et contribuer 
+          à l'hybridation Cloud <strong>Azure</strong>.
+        </p>
+        <p>
+          J'aime le côté opérationnel et concret de l'infrastructure. Je 
+          m'intéresse de près à l'automatisation et au <strong>NetDevOps</strong> 
+          (Terraform, Ansible, Python).
+        </p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="about-card-label">FORMATION</div>
+          <div class="about-card-val">M2 Expert Informatique SI – Infra<br/><span style="font-size:12px;color:var(--gray)">RNCP Niveau 7 · 2024–2026</span></div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">LOCALISATION</div>
+          <div class="about-card-val">Île-de-France</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">DISPONIBILITÉ</div>
+          <div class="about-card-val">CDI dès octobre 2026</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">LANGUES</div>
+          <div class="about-card-val">Français (natif) · Anglais (professionnel)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPÉRIENCES -->
+<section id="experiences">
+  <div class="container">
+    <p class="section-tag">// Expériences</p>
+    <h2>Parcours <em>professionnel</em></h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-title">Ingénieure Réseaux & Systèmes</span>
+          <span class="tl-date">Août 2024 – Présent</span>
+        </div>
+        <div class="tl-company">COMPETENCES & DEVELOPPEMENT · Alternance · Île-de-France</div>
+        <ul class="tl-bullets">
+          <li>Piloté la migration complète de la supervision (EvObserve → Nagios → Naemon) sous Docker avec cartographies NagVis et métrologie Cacti</li>
+          <li>Administré au quotidien les équipements multisites : Cisco Meraki, HP Aruba (switching, Wi-Fi), pare-feux Checkpoint</li>
+          <li>Participé à la migration des pare-feux Checkpoint vers Cisco ASA en cluster actif/passif (haute disponibilité)</li>
+          <li>Contribué à la migration du datacenter vers Microsoft Azure (serveurs Active Directory)</li>
+          <li>Traité les incidents réseau L2/L3 via EasyVista (ITIL) et rédigé les procédures techniques</li>
+        </ul>
+        <div class="tl-stack">
+          <span class="tag">Cisco ASA/Meraki</span><span class="tag">Checkpoint</span><span class="tag">HP Aruba</span><span class="tag">Naemon</span><span class="tag">NagVis</span><span class="tag">Cacti</span><span class="tag">Azure</span><span class="tag">Docker</span><span class="tag">EasyVista</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot gray"></div>
+        <div class="tl-header">
+          <span class="tl-title">Administratrice Systèmes & Réseaux</span>
+          <span class="tl-date gray">Mars – Août 2024</span>
+        </div>
+        <div class="tl-company">EPSI / MYDIL (Laboratoire de R&D et d'Innovation Digitale) · Stage · 6 mois</div>
+        <ul class="tl-bullets">
+          <li>Conçu et déployé des infrastructures virtuelles complètes pour deux sociétés fictives (IT-FACILE & C-MA-4)</li>
+          <li>Configuré un pare-feu OPNsense pour sécuriser les flux LAN/Internet</li>
+          <li>Mis en place une stack de supervision Wazuh + Zabbix avec alertes proactives</li>
+          <li>Rédigé le Plan de Reprise (PRA) et Plan de Continuité d'Activité (PCA)</li>
+        </ul>
+        <div class="tl-stack">
+          <span class="tag">OPNsense</span><span class="tag">Wazuh</span><span class="tag">Zabbix</span><span class="tag">VMware</span><span class="tag">Linux</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot gray"></div>
+        <div class="tl-header">
+          <span class="tl-title">Technicienne Support Informatique</span>
+          <span class="tl-date gray">Nov. 2023 – Jan. 2024</span>
+        </div>
+        <div class="tl-company">Everit · Stage · Toulon · 2 mois</div>
+        <ul class="tl-bullets">
+          <li>Résolution des incidents utilisateurs de niveau 1 et 2 (diagnostic matériel et logiciel)</li>
+          <li>Rédaction de tutoriels et procédures internes pour l'autonomie des collaborateurs</li>
+          <li>Développement de scripts d'automatisation (Python/Bash) pour le support</li>
+        </ul>
+        <div class="tl-stack">
+          <span class="tag">Support L1/L2</span><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Documentation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets">
+  <div class="container">
+    <p class="section-tag">// Projets GitHub</p>
+    <h2>Projets <em>personnels</em></h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="proj-icon">🖥️</div>
+        <div class="proj-title">network-monitoring-lab</div>
+        <div class="proj-desc">Stack de monitoring complète déployée via Docker Compose : Naemon/OMD + NagVis + Grafana + InfluxDB. Documentation complète avec schéma d'architecture.</div>
+        <div class="proj-tags">
+          <span class="tag">Docker</span><span class="tag">Naemon</span><span class="tag">NagVis</span><span class="tag">Grafana</span>
+        </div>
+        <span class="proj-wip">En cours</span>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-icon">☁️</div>
+        <div class="proj-title">azure-infra-terraform-ansible</div>
+        <div class="proj-desc">Infrastructure as Code sur Azure : Terraform pour créer VNet, subnets, NSG et VMs. Ansible playbooks pour la configuration des serveurs (Linux + Windows).</div>
+        <div class="proj-tags">
+          <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Azure</span><span class="tag">IaC</span>
+        </div>
+        <span class="proj-wip">En cours</span>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-icon">⚙️</div>
+        <div class="proj-title">network-automation-scripts</div>
+        <div class="proj-desc">Scripts Python (Netmiko) pour automatiser des tâches réseau Cisco : backup des configs, inventaire VLAN, vérification des interfaces. Testable sur Cisco DevNet Sandbox.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">Netmiko</span><span class="tag">Cisco</span>
+        </div>
+        <span class="proj-wip">À venir</span>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-icon">🔥</div>
+        <div class="proj-title">opnsense-firewall-lab</div>
+        <div class="proj-desc">Documentation et automatisation du déploiement OPNsense : règles firewall, config VPN OpenVPN, schéma de topologie réseau. Basé sur l'expérience du stage MYDIL.</div>
+        <div class="proj-tags">
+          <span class="tag">OPNsense</span><span class="tag">VPN</span><span class="tag">Sécurité</span>
+        </div>
+        <span class="proj-wip">À venir</span>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-icon">🐍</div>
+        <div class="proj-title">pra-pca-generator</div>
+        <div class="proj-desc">Application Flask (Python) pour générer des documents PRA/PCA personnalisés. Formulaire web → export PDF structuré. Templates sauvegardés en base SQLite.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span>
+        </div>
+        <span class="proj-wip">À venir</span>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-icon">📦</div>
+        <div class="proj-title">iac-kubernetes-deploy</div>
+        <div class="proj-desc">Industrialisation d'une application via Packer (images Nginx), déploiement sur cluster K3d avec Ansible dans un environnement GitHub Codespaces.</div>
+        <div class="proj-tags">
+          <span class="tag">Packer</span><span class="tag">Kubernetes</span><span class="tag">Ansible</span><span class="tag">GitHub</span>
+        </div>
+        <a href="https://www.linkedin.com/in/jessicamantissa/" class="https://github.com/jess-ml/">Voir sur GitHub ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPÉTENCES -->
+<section id="competences">
+  <div class="container">
+    <p class="section-tag">// Compétences</p>
+    <h2>Stack <em>technique</em></h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">RÉSEAUX</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Cisco Meraki</span><span class="skill-tag">HP Aruba</span><span class="skill-tag">OSPF</span><span class="skill-tag">BGP</span><span class="skill-tag">VPN IPSec</span><span class="skill-tag">OpenVPN</span><span class="skill-tag">NAT / ACL</span><span class="skill-tag">HSRP</span><span class="skill-tag">DHCP</span><span class="skill-tag">DNS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">SÉCURITÉ</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Checkpoint</span><span class="skill-tag">Cisco ASA</span><span class="skill-tag">OPNsense</span><span class="skill-tag">pfSense</span><span class="skill-tag">Wazuh</span><span class="skill-tag">VPN</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">SUPERVISION</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Nagios</span><span class="skill-tag">Naemon (OMD)</span><span class="skill-tag">NagVis</span><span class="skill-tag">Cacti</span><span class="skill-tag">Grafana</span><span class="skill-tag">Zabbix</span><span class="skill-tag">EvObserve</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">CLOUD & SYSTÈMES</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Active Directory</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Linux (Ubuntu/Debian)</span><span class="skill-tag">CentOS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">VIRTUALISATION & CONTENEURS</div>
+        <div class="skill-tags">
+          <span class="skill-tag">VMware ESXi</span><span class="skill-tag">Hyper-V</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">VirtualBox</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">AUTOMATISATION & SCRIPTING</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span><span class="skill-tag">Packer</span><span class="skill-tag">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <p class="section-tag">// Certifications</p>
+    <h2>Formations & <em>certifications</em></h2>
+    <div class="certif-list">
+      <div class="certif-item">
+        <div class="certif-icon azure">☁️</div>
+        <div>
+          <div class="certif-title">Microsoft Azure Fundamentals – AZ-900</div>
+          <div class="certif-sub">Microsoft · Pearson VUE</div>
+        </div>
+        <span class="certif-badge wip">En cours</span>
+      </div>
+      <div class="certif-item">
+        <div class="certif-icon ll">📚</div>
+        <div>
+          <div class="certif-title">L'essentiel de Terraform pour Azure</div>
+          <div class="certif-sub">LinkedIn Learning · 2026</div>
+        </div>
+        <span class="certif-badge done">Obtenu</span>
+      </div>
+      <div class="certif-item">
+        <div class="certif-icon ll">📚</div>
+        <div>
+          <div class="certif-title">Environnement de travail Ansible</div>
+          <div class="certif-sub">LinkedIn Learning · 2026</div>
+        </div>
+        <span class="certif-badge done">Obtenu</span>
+      </div>
+      <div class="certif-item">
+        <div class="certif-icon azure" style="opacity:0.4">☁️</div>
+        <div>
+          <div class="certif-title" style="color:var(--gray)">Azure Administrator Associate – AZ-104</div>
+          <div class="certif-sub">Microsoft · Objectif T3 2026</div>
+        </div>
+        <span class="certif-badge wip">Planifié</span>
+      </div>
+      <div class="certif-item">
+        <div class="certif-icon cisco" style="opacity:0.4">🔗</div>
+        <div>
+          <div class="certif-title" style="color:var(--gray)">CCNA 200-301</div>
+          <div class="certif-sub">Cisco · Objectif 2027</div>
+        </div>
+        <span class="certif-badge wip">Planifié</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-tag">// Contact</p>
+    <h2>Travaillons <em>ensemble</em></h2>
+    <div class="contact-box">
+      <p>Je suis disponible en CDI dès octobre 2026 en Île-de-France. N'hésitez pas à me contacter pour discuter d'une opportunité.</p>
+      <div class="contact-links">
+        <a href="mailto:sophie.martin@email.com" class="contact-link">✉ jessicamantissalembe@gmail.com</a>
+        <a href="https://www.linkedin.com/in/jessicamantissa/" class="contact-link" target="_blank">in LinkedIn</a>
+        <a href="https://github.com/jess-ml/" class="contact-link" target="_blank">⌥ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Jessica MANTISSA LEMBE · Portfolio · 2026 · Fait avec HTML/CSS · Hébergé sur GitHub Pages</p>
+</footer>
+
+</body>
+</html>
