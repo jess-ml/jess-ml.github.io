@@ -351,67 +351,67 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     <h2>Projets <em>personnels</em></h2>
     <div class="projects-grid">
 
-      <div class="project-card">
-        <div class="proj-icon">🖥️</div>
-        <div class="proj-title">network-monitoring-lab</div>
-        <div class="proj-desc">Stack de monitoring complète déployée via Docker Compose : Naemon/OMD + NagVis + Grafana + InfluxDB. Documentation complète avec schéma d'architecture.</div>
-        <div class="proj-tags">
-          <span class="tag">Docker</span><span class="tag">Naemon</span><span class="tag">NagVis</span><span class="tag">Grafana</span>
-        </div>
-        <span class="proj-wip">En cours</span>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-icon">☁️</div>
-        <div class="proj-title">azure-infra-terraform-ansible</div>
-        <div class="proj-desc">Infrastructure as Code sur Azure : Terraform pour créer VNet, subnets, NSG et VMs. Ansible playbooks pour la configuration des serveurs (Linux + Windows).</div>
-        <div class="proj-tags">
-          <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Azure</span><span class="tag">IaC</span>
-        </div>
-        <span class="proj-wip">En cours</span>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-icon">⚙️</div>
-        <div class="proj-title">network-automation-scripts</div>
-        <div class="proj-desc">Scripts Python (Netmiko) pour automatiser des tâches réseau Cisco : backup des configs, inventaire VLAN, vérification des interfaces. Testable sur Cisco DevNet Sandbox.</div>
-        <div class="proj-tags">
-          <span class="tag">Python</span><span class="tag">Netmiko</span><span class="tag">Cisco</span>
-        </div>
-        <span class="proj-wip">À venir</span>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-icon">🔥</div>
-        <div class="proj-title">opnsense-firewall-lab</div>
-        <div class="proj-desc">Documentation et automatisation du déploiement OPNsense : règles firewall, config VPN OpenVPN, schéma de topologie réseau. Basé sur l'expérience du stage MYDIL.</div>
-        <div class="proj-tags">
-          <span class="tag">OPNsense</span><span class="tag">VPN</span><span class="tag">Sécurité</span>
-        </div>
-        <span class="proj-wip">À venir</span>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-icon">🐍</div>
-        <div class="proj-title">pra-pca-generator</div>
-        <div class="proj-desc">Application Flask (Python) pour générer des documents PRA/PCA personnalisés. Formulaire web → export PDF structuré. Templates sauvegardés en base SQLite.</div>
-        <div class="proj-tags">
-          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span>
-        </div>
-        <span class="proj-wip">À venir</span>
-      </div>
-
-      <div class="project-card">
-        <div class="proj-icon">📦</div>
-        <div class="proj-title">iac-kubernetes-deploy</div>
-        <div class="proj-desc">Industrialisation d'une application via Packer (images Nginx), déploiement sur cluster K3d avec Ansible dans un environnement GitHub Codespaces.</div>
-        <div class="proj-tags">
-          <span class="tag">Packer</span><span class="tag">Kubernetes</span><span class="tag">Ansible</span><span class="tag">GitHub</span>
-        </div>
-        <a href="https://github.com/sophie-martin" class="proj-link">Voir sur GitHub ↗</a>
-      </div>
-
+  <div class="project-card">
+    <div class="proj-icon">🌐</div>
+    <div class="proj-title">Infrastructure Réseau Multi-Sites – ATP</div>
+    <div class="proj-desc">Conception et déploiement d'une infrastructure réseau complète pour l'ATP World Tour : 4 sites mondiaux (Londres, Monaco, USA, Australie), firewalls pfSense, VPN IPSec, Active Directory, Nextcloud, supervision Centreon et PRA/PCA. Réalisé individuellement.</div>
+    <div class="proj-tags">
+      <span class="tag">VMware ESXi</span><span class="tag">pfSense</span><span class="tag">VPN IPSec</span><span class="tag">Active Directory</span><span class="tag">Centreon</span><span class="tag">Nextcloud</span>
     </div>
+    <a href="https://github.com/jess-ml/mspr-atp-infrastructure.git" class="proj-link" target="_blank">Voir sur GitHub ↗</a>
+  </div>
+
+  <div class="project-card">
+    <div class="proj-icon">📊</div>
+    <div class="proj-title">Prédiction Électorale – Big Data & ML</div>
+    <div class="proj-desc">POC de prédiction des résultats électoraux par Machine Learning pour la startup Elexxion. Collecte de données publiques (data.gouv.fr), corrélations socio-économiques, comparaison de modèles : Random Forest, XGBoost, Keras et KMeans.</div>
+    <div class="proj-tags">
+      <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">Keras</span><span class="tag">KMeans</span><span class="tag">Pandas</span>
+    </div>
+    <a href="https://github.com/jess-ml/mspr-bigdata-election-prediction.git" class="proj-link" target="_blank">Voir sur GitHub ↗</a>
+  </div>
+
+  <div class="project-card">
+    <div class="proj-icon">⚙️</div>
+    <div class="proj-title">Cluster Kubernetes & Déploiement Odoo – COGIP</div>
+    <div class="proj-desc">Mise en place d'un cluster Kubernetes (K3S) via IaC pour héberger l'ERP Odoo. Provisionnement avec Packer et Terraform, déploiement avec Ansible. Gestion de projet en méthode agile (Gantt, Kanban).</div>
+    <div class="proj-tags">
+      <span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Packer</span><span class="tag">Odoo</span><span class="tag">Agile</span>
+    </div>
+    <span class="proj-wip">En cours</span>
+  </div>
+
+  <div class="project-card">
+    <div class="proj-icon">🗺️</div>
+    <div class="proj-title">Stratégie & Gouvernance SI – K-ElectroniK</div>
+    <div class="proj-desc">Diagnostic complet et plan de transformation du SI d'une PME de 210 personnes suite à un rachat international. Cartographie SI 4 niveaux, analyse des risques, PSSI, ITIL, Lean IT, Green IT et schéma BPMN.</div>
+    <div class="proj-tags">
+      <span class="tag">ITIL</span><span class="tag">BPMN</span><span class="tag">PSSI</span><span class="tag">PRA/PCA</span><span class="tag">Lean IT</span><span class="tag">Green IT</span>
+    </div>
+    <span class="proj-wip">En cours</span>
+  </div>
+
+  <div class="project-card">
+    <div class="proj-icon">📦</div>
+    <div class="proj-title">Déploiement Automatisé IaC – Kubernetes</div>
+    <div class="proj-desc">Industrialisation d'une application via création d'images Nginx avec Packer, déploiement sur cluster Kubernetes léger (K3d) à l'aide d'Ansible, orchestré dans un environnement GitHub Codespaces.</div>
+    <div class="proj-tags">
+      <span class="tag">Packer</span><span class="tag">Kubernetes</span><span class="tag">Ansible</span><span class="tag">GitHub</span>
+    </div>
+    <span class="proj-wip">En cours</span>
+  </div>
+
+  <div class="project-card">
+    <div class="proj-icon">🐍</div>
+    <div class="proj-title">API & Dashboard Python – Flask</div>
+    <div class="proj-desc">Création d'un serveur web Python (Flask) pour construire une API REST. Collecte et traitement de données JSON, restitution visuelle des métriques via graphiques (Google LineChart), versionnage sur GitHub.</div>
+    <div class="proj-tags">
+      <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">API REST</span><span class="tag">JSON</span>
+    </div>
+    <span class="proj-wip">En cours</span>
+  </div>
+
+</div>
   </div>
 </section>
 
