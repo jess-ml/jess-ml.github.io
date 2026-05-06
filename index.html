@@ -237,32 +237,33 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
 <section id="about">
   <div class="container">
     <p class="section-tag">// À propos</p>
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:2rem;">
+        <img 
+        src="im/photo.jpeg" 
+        alt="Photo de profil" 
+        style="width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); box-shadow: 0 0 20px rgba(0,196,204,0.2); margin-bottom:1rem;"
+        />
+    </div>
     <h2>Qui <em>suis-je</em> ?</h2>
     <div class="about-grid">
-  <div class="about-text">
-    <p>
-      Ingénieure réseaux et systèmes, je termine un <strong>Master 2 Expert 
-      Informatique SI – spécialité Infrastructure (RNCP Niveau 7)</strong> 
-      en alternance depuis deux ans.
-    </p>
-    <p>
-      Mon quotidien : administrer des équipements <strong>Cisco et HP Aruba</strong>, 
-      piloter la refonte de la supervision réseau, participer à la migration 
-      de pare-feux Checkpoint vers <strong>Cisco ASA</strong>, et contribuer 
-      à l'hybridation Cloud <strong>Azure</strong>.
-    </p>
-    <p>
-      J'aime le côté opérationnel et concret de l'infrastructure. Je 
-      m'intéresse de près à l'automatisation et au <strong>NetDevOps</strong> 
-      (Terraform, Ansible, Python).
-    </p>
-  </div>
-  <div style="display:flex; flex-direction:column; align-items:center; gap:1.5rem;">
-    <img 
-      src="im/photo.jpeg" 
-      alt="Photo de profil" 
-      style="width:160px; height:160px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); box-shadow: 0 0 20px rgba(0,196,204,0.2);"
-    />
+        <div class="about-text">
+         <p>
+            Ingénieure réseaux et systèmes, je termine un <strong>Master 2 Expert 
+            Informatique SI – spécialité Infrastructure (RNCP Niveau 7)</strong> 
+            en alternance depuis deux ans.
+        </p>
+        <p>
+            Mon quotidien : administrer des équipements <strong>Cisco et HP Aruba</strong>, 
+            piloter la refonte de la supervision réseau, participer à la migration 
+            de pare-feux Checkpoint vers <strong>Cisco ASA</strong>, et contribuer 
+            à l'hybridation Cloud <strong>Azure</strong>.
+        </p>
+        <p>
+            J'aime le côté opérationnel et concret de l'infrastructure. Je 
+            m'intéresse de près à l'automatisation et au <strong>NetDevOps</strong> 
+            (Terraform, Ansible, Python).
+        </p>
+    </div>
     <div class="about-cards">
       <div class="about-card">
         <div class="about-card-label">FORMATION</div>
