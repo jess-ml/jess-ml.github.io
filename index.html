@@ -108,8 +108,8 @@ h2 em { color: var(--accent); font-style: normal; }
 .tl-dot.gray { background: var(--gray); box-shadow: 0 0 0 3px rgba(138,155,176,0.15); }
 .tl-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
 .tl-title { font-size: 16px; font-weight: 600; }
-.tl-date { font-family: var(--mono); font-size: 11px; color: #00ffee; padding: 3px 10px; background: rgba(0,196,204,0.2); border-radius: 20px; white-space: nowrap; font-weight: 700; border: 1px solid rgba(0,196,204,0.4); }
-.tl-date.gray { color: #c8d8e8; background: rgba(138,155,176,0.2); border: 1px solid rgba(138,155,176,0.4); }
+.tl-date { font-family: var(--mono); font-size: 13px; color: #00ffee; padding: 3px 10px; background: rgba(0,196,204,0.2); border-radius: 20px; white-space: nowrap; font-weight: 700; border: 1px solid rgba(0,196,204,0.4); }
+.tl-date.gray { font-size: 13px; color: #c8d8e8; background: rgba(138,155,176,0.2); border: 1px solid rgba(138,155,176,0.4); font-weight: 700; }
 .tl-company { font-size: 13px; color: var(--blue-light); margin-bottom: 0.8rem; }
 .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
 .tl-bullets li { font-size: 16px; color: var(--gray); padding-left: 1.1rem; position: relative; font-weight: 500; }
@@ -142,7 +142,7 @@ h2 em { color: var(--accent); font-style: normal; }
 }
 .skill-group-title { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 0.9rem; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-tag { font-size: 14px; padding: 4px 10px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); }
+.skill-tag { font-size: 14px; padding: 4px 10px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: #FFFFFF; font-weight: 700; }
 
 /* ── CERTIFICATIONS ── */
 #certifications { background: var(--navy2); }
@@ -158,9 +158,9 @@ h2 em { color: var(--accent); font-style: normal; }
 .certif-icon.ll { background: rgba(0,115,186,0.15); }
 .certif-title { font-size: 14px; font-weight: 500; }
 .certif-sub { font-size: 12px; color: var(--gray); margin-top: 2px; font-weight:500 }
-.certif-badge { margin-left: auto; font-family: var(--mono); font-size: 10px; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
-.certif-badge.done { background: rgba(0,196,204,0.25); color: #00ffee; border: 1px solid rgba(0,196,204,0.5); font-weight: 700; }
-.certif-badge.wip { background: rgba(138,155,176,0.25); color: #c8d8e8; border: 1px solid rgba(138,155,176,0.4); font-weight: 700; }
+.certif-badge { margin-left: auto; font-family: var(--mono); font-size: 13px; padding: 4px 12px; border-radius: 20px; white-space: nowrap; font-weight: 700; }
+.certif-badge.done { background: rgba(0,196,204,0.25); color: #00ffee; border: 1px solid rgba(0,196,204,0.5); }
+.certif-badge.wip { background: rgba(138,155,176,0.25); color: #c8d8e8; border: 1px solid rgba(138,155,176,0.4); }
 
 /* ── CONTACT ── */
 .contact-box {
@@ -227,6 +227,15 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     </div>
     <div class="hero-stack">
       <span class="hero-stack-label">STACK</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">Cisco ASA/Meraki</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">Microsoft Azure</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">AWS</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">Nagios · Naemon</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">Terraform · Ansible</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">Docker</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">Linux</span>
+      <span class="tech-pill" style="font-size:13px; font-weight:700; color:#FFFFFF;">DHCP · AD DS · DNS · WDS · Windows Server</span>
+      
       <span class="tech-pill" style="font-size:13px; font-weight:700;">Cisco ASA/Meraki</span>
       <span class="tech-pill" style="font-size:13px; font-weight:700;">Microsoft Azure</span>
       <span class="tech-pill" style="font-size:13px; font-weight:700;">Nagios · Naemon</span>
@@ -482,7 +491,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
       <div class="skill-group">
         <div class="skill-group-title">CLOUD & SYSTÈMES</div>
         <div class="skill-tags">
-          <span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Active Directory</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Linux (Ubuntu/Debian)</span><span class="skill-tag">CentOS</span>
+          <span class="skill-tag">Microsoft Azure</span><span class="skill-tag">AWS</span><span class="skill-tag">Active Directory</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Linux (Ubuntu/Debian)</span><span class="skill-tag">CentOS</span>
         </div>
       </div>
       <div class="skill-group">
