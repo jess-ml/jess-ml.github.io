@@ -85,7 +85,7 @@ h2 em { color: var(--accent); font-style: normal; }
 /* ── ABOUT ── */
 #about { background: var(--navy2); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.about-text p { color: var(--gray); margin-bottom: 1.2rem; font-size: 15px; }
+.about-text p { color: var(--gray); margin-bottom: 1.2rem; font-size: 16px; }
 .about-text p strong { color: var(--white); }
 .about-cards { display: flex; flex-direction: column; gap: 1rem; }
 .about-card {
@@ -93,7 +93,7 @@ h2 em { color: var(--accent); font-style: normal; }
   border-radius: 10px; padding: 1.1rem 1.25rem;
 }
 .about-card-label { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-bottom: 0.4rem; letter-spacing: 0.06em; }
-.about-card-val { font-size: 14px; color: var(--white); }
+.about-card-val { font-size: 15px; color: var(--white); }
 
 /* ── EXPÉRIENCES ── */
 .timeline { position: relative; padding-left: 2rem; }
@@ -112,7 +112,7 @@ h2 em { color: var(--accent); font-style: normal; }
 .tl-date.gray { color: #c8d8e8; background: rgba(138,155,176,0.2); border: 1px solid rgba(138,155,176,0.4); }
 .tl-company { font-size: 13px; color: var(--blue-light); margin-bottom: 0.8rem; }
 .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-.tl-bullets li { font-size: 14px; color: var(--gray); padding-left: 1.1rem; position: relative; font-weight: 500; }
+.tl-bullets li { font-size: 16px; color: var(--gray); padding-left: 1.1rem; position: relative; font-weight: 500; }
 .tl-bullets li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 .tl-stack { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 6px; }
 .tag { font-family: var(--mono); font-size: 11px; padding: 3px 9px; border-radius: 4px; background: rgba(26,111,168,0.15); border: 1px solid rgba(26,111,168,0.3); color: #7ec8e3; }
@@ -128,7 +128,7 @@ h2 em { color: var(--accent); font-style: normal; }
 .project-card:hover { border-color: rgba(0,196,204,0.4); transform: translateY(-3px); }
 .proj-icon { font-size: 22px; margin-bottom: 0.2rem; }
 .proj-title { font-size: 15px; font-weight: 600; }
-.proj-desc { font-size: 13px; color: var(--gray); line-height: 1.65; flex: 1; font-weight: 500; }
+.proj-desc { font-size: 15px; color: var(--gray); line-height: 1.65; flex: 1; font-weight: 500; }
 .proj-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
 .proj-link { margin-top: 0.5rem; font-family: var(--mono); font-size: 12px; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
 .proj-link:hover { text-decoration: underline; }
@@ -142,7 +142,7 @@ h2 em { color: var(--accent); font-style: normal; }
 }
 .skill-group-title { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 0.9rem; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-tag { font-size: 12px; padding: 4px 10px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); }
+.skill-tag { font-size: 14px; padding: 4px 10px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); }
 
 /* ── CERTIFICATIONS ── */
 #certifications { background: var(--navy2); }
@@ -364,6 +364,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     <div class="projects-grid">
 
   <div class="project-card" style="grid-column: 1 / -1;">
+    <span style="font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:rgba(255,165,0,0.15); color:#ffaa00; border:1px solid rgba(255,165,0,0.4); margin-bottom:0.5rem; display:inline-block;">🎓 Projet académique</span>
     <div class="proj-icon">🌐</div>
     <div class="proj-title">Infrastructure Réseau Multi-Sites – ATP</div>
     <div class="proj-desc">Conception et déploiement d'une infrastructure réseau complète pour l'ATP World Tour : 4 sites mondiaux (Londres, Monaco, USA, Australie), firewalls pfSense, VPN IPSec, Active Directory, Nextcloud, supervision Centreon et PRA/PCA. Réalisé individuellement.</div>
@@ -385,6 +386,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
 
 
   <div class="project-card">
+    <span style="font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:rgba(255,165,0,0.15); color:#ffaa00; border:1px solid rgba(255,165,0,0.4); margin-bottom:0.5rem; display:inline-block;">🎓 Projet académique</span>
     <div class="proj-icon">📊</div>
     <div class="proj-title">Prédiction Électorale – Big Data & ML</div>
     <div class="proj-desc">POC de prédiction des résultats électoraux par Machine Learning pour la startup Elexxion. Collecte de données publiques (data.gouv.fr), corrélations socio-économiques, comparaison de modèles : Random Forest, XGBoost, Keras et KMeans.</div>
@@ -395,6 +397,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
   </div>
 
   <div class="project-card">
+    <span style="font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:rgba(255,165,0,0.15); color:#ffaa00; border:1px solid rgba(255,165,0,0.4); margin-bottom:0.5rem; display:inline-block;">🎓 Projet académique</span>
     <div class="proj-icon">⚙️</div>
     <div class="proj-title">Cluster Kubernetes & Déploiement Odoo – COGIP</div>
     <div class="proj-desc">Mise en place d'un cluster Kubernetes (K3S) via IaC pour héberger l'ERP Odoo. Provisionnement avec Packer et Terraform, déploiement avec Ansible. Gestion de projet en méthode agile (Gantt, Kanban).</div>
@@ -405,6 +408,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
   </div>
 
   <div class="project-card">
+    <span style="font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:rgba(255,165,0,0.15); color:#ffaa00; border:1px solid rgba(255,165,0,0.4); margin-bottom:0.5rem; display:inline-block;">🎓 Projet académique</span>
     <div class="proj-icon">🗺️</div>
     <div class="proj-title">Stratégie & Gouvernance SI – K-ElectroniK</div>
     <div class="proj-desc">Diagnostic complet et plan de transformation du SI d'une PME de 210 personnes suite à un rachat international. Cartographie SI 4 niveaux, analyse des risques, PSSI, ITIL, Lean IT, Green IT et schéma BPMN.</div>
@@ -415,6 +419,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
   </div>
 
   <div class="project-card">
+    <span style="font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:rgba(0,196,204,0.15); color:var(--accent); border:1px solid rgba(0,196,204,0.4); margin-bottom:0.5rem; display:inline-block;">⚡ Projet personnel</span>
     <div class="proj-icon">📦</div>
     <div class="proj-title">Déploiement Automatisé IaC – Kubernetes</div>
     <div class="proj-desc">Industrialisation d'une application via création d'images Nginx avec Packer, déploiement sur cluster Kubernetes léger (K3d) à l'aide d'Ansible, orchestré dans un environnement GitHub Codespaces.</div>
@@ -425,6 +430,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
   </div>
 
   <div class="project-card">
+    <span style="font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:rgba(0,196,204,0.15); color:var(--accent); border:1px solid rgba(0,196,204,0.4); margin-bottom:0.5rem; display:inline-block;">⚡ Projet personnel</span>
     <div class="proj-icon">🐍</div>
     <div class="proj-title">API & Dashboard Python – Flask</div>
     <div class="proj-desc">Création d'un serveur web Python (Flask) pour construire une API REST. Collecte et traitement de données JSON, restitution visuelle des métriques via graphiques (Google LineChart), versionnage sur GitHub.</div>
@@ -433,6 +439,17 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     </div>
     <span class="proj-wip">En cours</span>
   </div>
+
+  <div class="project-card">
+    <span style="font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:rgba(0,196,204,0.15); color:var(--accent); border:1px solid rgba(0,196,204,0.4); margin-bottom:0.5rem; display:inline-block;">⚡ Projet personnel</span>
+    <div class="proj-icon">🖥️</div>
+    <div class="proj-title">Homelab – Supervision Réseau</div>
+    <div class="proj-desc">Déploiement d'un environnement de supervision réseau complet via Docker Compose : Prometheus, Grafana, AlertManager et Node Exporter. Tableaux de bord personnalisés, alertes configurées par seuils, simulation multi-hôtes supervisés. Documentation complète avec schéma d'architecture.</div>
+    <div class="proj-tags">
+    <span class="tag">Docker</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">AlertManager</span><span class="tag">Linux</span>
+  </div>
+  <span class="proj-wip">En cours</span>
+</div>
 
 </div>
   </div>
