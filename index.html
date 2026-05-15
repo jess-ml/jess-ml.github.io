@@ -189,6 +189,47 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
   .hero-cta { justify-content: center; }
   .hero-stack { justify-content: center; }
 }
+
+/* ── MODALS ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+  align-items: center; justify-content: center; padding: 1.5rem;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: #1b2d3f; border: 1px solid rgba(0,196,204,0.3);
+  border-radius: 16px; padding: 2.5rem; max-width: 750px; width: 100%;
+  max-height: 85vh; overflow-y: auto; position: relative;
+  box-shadow: 0 0 40px rgba(0,196,204,0.15);
+}
+.modal-close {
+  position: absolute; top: 1rem; right: 1.25rem;
+  background: none; border: none; color: var(--gray);
+  font-size: 22px; cursor: pointer; transition: color 0.2s;
+}
+.modal-close:hover { color: var(--accent); }
+.modal-title { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 0.4rem; }
+.modal-sub { font-size: 13px; color: var(--gray); margin-bottom: 1.5rem; font-family: var(--mono); }
+.modal-section { margin-bottom: 1.5rem; }
+.modal-section-title {
+  font-size: 12px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;
+}
+.modal-section p { font-size: 14px; color: var(--white); line-height: 1.75; font-weight: 500; }
+.modal-section ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.4rem; }
+.modal-section ul li { font-size: 14px; color: var(--white); padding-left: 1.1rem; position: relative; font-weight: 500; line-height: 1.65; }
+.modal-section ul li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.5rem; }
+.modal-divider { height: 1px; background: var(--border); margin: 1.2rem 0; }
+.btn-detail {
+  margin-top: 0.8rem; display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  border: 1px solid var(--accent); padding: 5px 14px; border-radius: 20px;
+  cursor: pointer; background: transparent; transition: all 0.2s; font-family: var(--font);
+}
+.btn-detail:hover { background: var(--accent); color: var(--navy); }
 </style>
 </head>
 <body>
@@ -391,6 +432,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     alt="Schéma réseau ATP" 
     style="width:100%; border-radius:8px; margin-top:0.5rem; border:1px solid var(--border);"
     />
+    <button class="btn-detail" onclick="openModal('modal-atp')">🔍 Voir les détails</button>
     <a href="https://github.com/jess-ml/mspr-atp-infrastructure.git" class="proj-link" target="_blank">Voir sur GitHub ↗</a>
   </div>
 
@@ -436,6 +478,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     <div class="proj-tags">
       <span class="tag">Packer</span><span class="tag">Kubernetes</span><span class="tag">Ansible</span><span class="tag">GitHub</span>
     </div>
+    <button class="btn-detail" onclick="openModal('modal-iac')">🔍 Voir les détails</button>
     <a href="https://github.com/jess-ml/iac-kubernetes-deploy/" class="proj-link" target="_blank">Voir sur GitHub ↗</a>
   </div>
 
@@ -458,6 +501,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     <div class="proj-tags">
     <span class="tag">Docker</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">AlertManager</span><span class="tag">Linux</span>
   </div>
+  <button class="btn-detail" onclick="openModal('modal-homelab')">🔍 Voir les détails</button>
   <a href="https://github.com/jess-ml/homelab-network-monitoring/" class="proj-link" target="_blank">Voir sur GitHub ↗</a>
 </div>
 
@@ -659,6 +703,196 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
 <footer>
   <p>Jessica MANTISSA LEMBE · Portfolio · 2026 · Fait avec HTML/CSS · Hébergé sur GitHub Pages</p>
 </footer>
+<!-- MODAL ATP -->
+<div class="modal-overlay" id="modal-atp">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-atp')">✕</button>
+    <div class="modal-title">🌐 Infrastructure Réseau Multi-Sites – ATP World Tour</div>
+    <div class="modal-sub">MSPR Bloc 5 · Master 1 · Réalisé individuellement · 2024</div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🎯 Objectif du projet</div>
+      <p>L'ATP (Association of Tennis Professionals) est une organisation mondiale gérant plus de 64 tournois dans 31 pays, avec des entités à Londres, Monaco, USA et Australie. Chaque site fonctionnait de manière indépendante, ce qui rendait difficile toute communication sécurisée entre les filiales. L'objectif était d'<strong>interconnecter les 4 sites distants</strong> au sein d'un système d'information unifié, sécurisé et résilient.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🏗️ Solution mise en place</div>
+      <ul>
+        <li><strong>Virtualisation :</strong> Déploiement d'un hyperviseur VMware ESXi avec 23 VMs, segmentation réseau par vSwitchs et VLANs dédiés (Admin/Users) pour chaque site</li>
+        <li><strong>Plan d'adressage :</strong> Conception d'un plan IP structuré par site (192.168.1.0/24 Londres, 192.168.2.0/24 Australie, 192.168.3.0/24 Monaco, 192.168.4.0/24 USA)</li>
+        <li><strong>Sécurité & Interconnexion :</strong> Déploiement de pare-feux pfSense sur chaque site avec tunnels VPN IPSec site-à-site (AES-256, SHA-256, IKEv2) et VPN OpenVPN pour les utilisateurs nomades</li>
+        <li><strong>Identité centralisée :</strong> Active Directory avec domaine atp.local, réplication inter-sites (Londres + USA), service RDP pour les bureaux virtuels</li>
+        <li><strong>Stockage collaboratif :</strong> Nextcloud déployé sur Ubuntu Server (LAMP) avec synchronisation vers le site PRA</li>
+        <li><strong>Supervision :</strong> Centreon (basé Nagios) avec alertes CPU/RAM/disque et métrologie SNMP</li>
+        <li><strong>PRA/PCA :</strong> Site de secours à Monaco avec serveurs dormants, RPO 36h et RTO 48h</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">⚡ Défi rencontré</div>
+      <p>Le cahier des charges prévoyait initialement l'utilisation de VMware vCenter pour gérer plusieurs hyperviseurs. Par contrainte de ressources matérielles (un seul serveur physique avec 45 Go de RAM), j'ai dû <strong>adapter l'architecture</strong> pour faire tourner l'ensemble de l'infrastructure sur un unique ESXi, en optimisant l'allocation des ressources pour chaque VM. Cette contrainte m'a appris à concevoir des architectures efficaces avec des ressources limitées — une compétence précieuse en production réelle.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🎓 Compétences acquises</div>
+      <ul>
+        <li>Conception d'un plan d'adressage réseau multi-sites from scratch</li>
+        <li>Configuration de VPN IPSec site-à-site et OpenVPN nomade</li>
+        <li>Déploiement et administration VMware ESXi (vSwitchs, VLANs, ressources VMs)</li>
+        <li>Mise en place d'une haute disponibilité Active Directory multi-sites</li>
+        <li>Supervision réseau avec Centreon, alerting SNMP et métrologie</li>
+        <li>Rédaction de PRA/PCA avec objectifs RPO et RTO</li>
+        <li>Gestion de projet technique en autonomie totale</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🛠️ Stack technique</div>
+      <div class="modal-tags">
+        <span class="tag">VMware ESXi</span><span class="tag">pfSense</span><span class="tag">VPN IPSec</span><span class="tag">OpenVPN</span><span class="tag">Active Directory</span><span class="tag">Nextcloud</span><span class="tag">Centreon</span><span class="tag">Windows Server</span><span class="tag">Linux</span><span class="tag">KeePass</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL IaC KUBERNETES -->
+<div class="modal-overlay" id="modal-iac">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-iac')">✕</button>
+    <div class="modal-title">⚙️ Déploiement Automatisé IaC – Kubernetes</div>
+    <div class="modal-sub">Projet personnel · Infrastructure as Code · 2025</div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🎯 Objectif du projet</div>
+      <p>Kubernetes est aujourd'hui l'un des outils les plus utilisés en entreprise pour orchestrer des conteneurs à grande échelle. L'objectif de ce projet était de <strong>maîtriser une chaîne IaC complète</strong> — de la création d'image à son déploiement automatisé sur un cluster Kubernetes — en utilisant les mêmes outils que l'on trouve en production : Packer, Terraform, Ansible.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🏗️ Ce qui a été mis en place</div>
+      <ul>
+        <li><strong>Packer :</strong> Création d'une image Docker Nginx personnalisée avec page HTML et configuration sur mesure — reproductible et versionnée</li>
+        <li><strong>K3d :</strong> Déploiement d'un cluster Kubernetes léger (1 control-plane + 2 workers) tournant dans Docker — idéal pour un environnement local ou de développement</li>
+        <li><strong>Ansible :</strong> Playbook complet qui orchestre tout : création du cluster, import de l'image, déploiement des ressources Kubernetes, health checks</li>
+        <li><strong>Kubernetes :</strong> Deployment avec 2 réplicas, liveness/readiness probes, resource limits et Service LoadBalancer pour exposer l'application</li>
+        <li><strong>GitHub Codespaces :</strong> Environnement de développement cloud unifié pour garantir la reproductibilité</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">💡 Ce que j'ai appris</div>
+      <p>Ce projet m'a permis de comprendre concrètement ce que signifie l'<strong>Infrastructure as Code</strong> : décrire son infrastructure comme du code, la versionner, la rejouer à l'identique. J'ai découvert l'écosystème Kubernetes de l'intérieur — les concepts de Pod, Deployment, Service, Ingress — et compris pourquoi les entreprises l'adoptent massivement pour sa résilience et sa scalabilité. L'automatisation avec Ansible m'a aussi montré qu'on peut passer d'une infrastructure vide à une application déployée en une seule commande.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🎓 Compétences acquises</div>
+      <ul>
+        <li>Création d'images Docker reproductibles avec Packer</li>
+        <li>Déploiement et administration d'un cluster Kubernetes (K3d)</li>
+        <li>Écriture de playbooks Ansible pour l'orchestration IaC</li>
+        <li>Maîtrise des ressources Kubernetes (Deployment, Service, probes)</li>
+        <li>Approche DevOps : versionnage de l'infrastructure avec Git</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🛠️ Stack technique</div>
+      <div class="modal-tags">
+        <span class="tag">Packer</span><span class="tag">Kubernetes</span><span class="tag">K3d</span><span class="tag">Ansible</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">GitHub Codespaces</span><span class="tag">IaC</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL HOMELAB -->
+<div class="modal-overlay" id="modal-homelab">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-homelab')">✕</button>
+    <div class="modal-title">🖥️ Homelab – Supervision Réseau</div>
+    <div class="modal-sub">Projet personnel · Monitoring & Observabilité · 2025</div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🎯 Objectif du projet</div>
+      <p>En alternance, j'ai travaillé quotidiennement avec des outils de supervision comme Nagios, Naemon, NagVis et Cacti. Ce homelab avait pour objectif d'<strong>explorer l'écosystème moderne de la supervision</strong> — Prometheus et Grafana — qui est aujourd'hui le standard dans les environnements cloud-native et DevOps, en complément de ce que je maîtrisais déjà.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🏗️ Ce qui a été mis en place</div>
+      <ul>
+        <li><strong>Node Exporter :</strong> Collecte des métriques système (CPU, RAM, disque, réseau) sur chaque hôte supervisé</li>
+        <li><strong>Prometheus :</strong> Scraping des métriques toutes les 15 secondes, stockage temporel sur 15 jours, évaluation des règles d'alertes en PromQL</li>
+        <li><strong>Grafana :</strong> Tableaux de bord visuels en temps réel, provisionnés automatiquement via fichiers de config</li>
+        <li><strong>AlertManager :</strong> Gestion intelligente des alertes — groupement, routage par sévérité (warning/critical), suppression des doublons</li>
+        <li><strong>Docker Compose :</strong> Orchestration de toute la stack en un seul fichier, avec volumes persistants et réseau dédié</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🔗 Lien avec mon expérience pro</div>
+      <p>En alternance, j'avais piloté la migration de la supervision de EvObserve vers Nagios puis Naemon. Ce homelab m'a permis d'aller plus loin en découvrant <strong>Prometheus et Grafana</strong>, qui apportent une approche radicalement différente : au lieu de configurer des checks service par service, Prometheus scrape automatiquement des endpoints de métriques — beaucoup plus adapté aux environnements conteneurisés et cloud. C'est une compétence complémentaire qui renforce mon profil supervision.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🎓 Compétences acquises</div>
+      <ul>
+        <li>Déploiement d'une stack de monitoring complète via Docker Compose</li>
+        <li>Écriture de règles d'alertes en PromQL avec niveaux de sévérité</li>
+        <li>Configuration du provisionnement automatique Grafana (datasources, dashboards)</li>
+        <li>Gestion du routage et du groupement d'alertes avec AlertManager</li>
+        <li>Compréhension de l'observabilité moderne dans les environnements cloud-native</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🛠️ Stack technique</div>
+      <div class="modal-tags">
+        <span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">AlertManager</span><span class="tag">Node Exporter</span><span class="tag">Docker Compose</span><span class="tag">PromQL</span><span class="tag">Linux</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+</script>
 
 </body>
 </html>
