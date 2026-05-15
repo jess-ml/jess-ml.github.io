@@ -445,6 +445,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border);
     <div class="proj-tags">
       <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">Keras</span><span class="tag">KMeans</span><span class="tag">Pandas</span>
     </div>
+    <button class="btn-detail" onclick="openModal('modal-bigdata')">🔍 Voir les détails</button>
     <a href="https://github.com/jess-ml/mspr-bigdata-election-prediction.git" class="proj-link" target="_blank">Voir sur GitHub ↗</a>
   </div>
 
@@ -893,6 +894,62 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
   });
 });
 </script>
+<!-- MODAL BIG DATA -->
+<div class="modal-overlay" id="modal-bigdata">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-bigdata')">✕</button>
+    <div class="modal-title">📊 Prédiction Électorale – Big Data & Machine Learning</div>
+    <div class="modal-sub">MSPR Bloc 3 · Master 1 · Projet d'équipe · 2024</div>
 
+    <div class="modal-section">
+      <div class="modal-section-title">🎯 Objectif du projet</div>
+      <p>La startup fictive <strong>Elexxion</strong>, spécialisée dans le conseil en campagnes électorales, souhaitait démontrer la faisabilité d'un modèle prédictif capable d'anticiper les tendances électorales. L'objectif était de construire une <strong>preuve de concept (POC)</strong> basée sur des indicateurs socio-économiques réels (emploi, sécurité, population, vie économique) corrélés aux résultats des élections passées, pour prédire les tendances futures à 1, 2 et 3 ans.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🏗️ Méthodologie et réalisation</div>
+      <ul>
+        <li><strong>Collecte des données :</strong> Exploitation des jeux de données publics de data.gouv.fr — résultats électoraux, données INSEE, indicateurs de sécurité et d'emploi</li>
+        <li><strong>Nettoyage et normalisation :</strong> Traitement des données avec Pandas — suppression des valeurs manquantes, normalisation, structuration en jeux d'entraînement et de test</li>
+        <li><strong>Analyse des corrélations :</strong> Matrices de corrélation par parti politique pour identifier les indicateurs les plus prédictifs des résultats électoraux</li>
+        <li><strong>Modèles testés :</strong> Random Forest, XGBoost, Keras (réseau de neurones) et KMeans (clustering des profils électoraux)</li>
+        <li><strong>Évaluation :</strong> Comparaison des modèles sur plusieurs découpages (77%, 80/20, données 2017-2022) avec mesure de l'accuracy</li>
+        <li><strong>Visualisation :</strong> Graphiques de corrélation par parti, courbes d'apprentissage Keras, visualisation des clusters KMeans</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">💡 Ce que j'ai appris</div>
+      <p>Ce projet m'a permis de découvrir concrètement le cycle complet d'un projet Data Science : de la collecte brute à la visualisation des résultats. J'ai compris l'importance cruciale de la <strong>qualité des données</strong> — un modèle n'est jamais meilleur que les données qu'on lui fournit. J'ai aussi appris à comparer objectivement plusieurs algorithmes de Machine Learning et à choisir le plus adapté selon le contexte, en comprenant leurs forces et leurs limites respectives.</p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🎓 Compétences acquises</div>
+      <ul>
+        <li>Collecte et nettoyage de données publiques (ETL basique avec Pandas)</li>
+        <li>Implémentation et comparaison de modèles de Machine Learning supervisé</li>
+        <li>Clustering non supervisé avec KMeans</li>
+        <li>Évaluation des performances d'un modèle (accuracy, matrices de corrélation)</li>
+        <li>Visualisation de données avec Matplotlib et Google LineChart</li>
+        <li>Approche Data Science structurée : du besoin métier au modèle prédictif</li>
+      </ul>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🛠️ Stack technique</div>
+      <div class="modal-tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">Keras</span><span class="tag">KMeans</span><span class="tag">Matplotlib</span><span class="tag">data.gouv.fr</span>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
